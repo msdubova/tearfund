@@ -1,0 +1,92 @@
+.page {
+  background-color: $color-background;
+  box-sizing: border-box;
+  min-width: $mobile;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  font-family: "FS Me", "Arial", sans-serif;
+  text-align: left;
+  letter-spacing: 0;
+  scroll-behavior: smooth;
+  background-size: cover;
+  background-color: $color-background;
+  background-repeat: no-repeat;
+
+
+  @include retina() {
+    background-image: url("../img/WhereYourMoneyGoes-Desktop-2x.webp");
+  }
+
+  background-image: url("../img/WhereYourMoneyGoes-Desktop-1x.webp");
+
+  @include tablet {
+    background-image: url("../img/WhereYourMoneyGoes-Tablet-1x.webp");
+
+    @include retina() {
+      background-image: url("../img/WhereYourMoneyGoes-Tablet-2x.webp");
+    }
+  }
+
+  @include mobile {
+    background-image: url("../img/WhereYourMoneyGoes-Mobile-1x.webp");
+    background-position-x: center;
+    background-position-y: 0;
+    background-size: 100%;
+
+    @include retina() {
+      background-image: url("../img/WhereYourMoneyGoes-Mobile-2x.webp");
+    }
+  }
+}
+
+.page a,
+.page input {
+  border-radius: 10px;
+
+  &:hover {
+    outline: 3px solid $color-default-white;
+    opacity: 0.8;
+
+    @include mobile {
+      outline: none;
+    }
+  }
+
+  &:focus,
+  &:active {
+    outline: 3px solid $color-default-white;
+  }
+
+  &:disabled {
+    opacity: 0.1;
+  }
+}
+
+.page ul {
+  list-style: none;
+  margin: 0;
+}
+
+.page__body {
+  display: flex;
+
+}
+
+.page__main {
+  flex: 1 0 auto;
+}
+
+.page__heading {
+  font-size: 40px;
+  font-family: "FS Me", "Arial", sans-serif;
+  font-family: "FS Me Bold";
+  line-height: 52px;
+
+  @include tablet {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}

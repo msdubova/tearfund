@@ -1,0 +1,551 @@
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "FS Me";
+  font-display: swap;
+  src: url("../fonts/FSMeWeb-Regular_rcfffc.woff2") format("woff2");
+}
+
+@font-face {
+  font-style: normal;
+  font-family: "FS Me Bold";
+  font-display: swap;
+  src: url("../fonts/FSMeWeb-Bold_ce2eoa.woff2") format("woff2");
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+html {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "FS Me", "Arial", sans-serif;
+  color: #333333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  color: #333333;
+  text-decoration: none;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+textarea {
+  resize: none;
+}
+
+input,
+textarea {
+  border-radius: 0;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  opacity: 1;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  opacity: 1;
+}
+
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+  opacity: 1;
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+}
+
+input:invalid,
+textarea:invalid {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+select {
+  border-radius: 0;
+}
+
+input::-ms-clear,
+input::-ms-reveal {
+  display: none;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+select,
+textarea,
+input:matches([type="email"],
+[type="number"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="url"]) {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.wrapper {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 100vh;
+  /* stylelint-disable-next-line */
+  min-height: calc(100 * var(--vh, 1vh));
+}
+
+.wrapper .header,
+.wrapper .footer {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.wrapper main {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+}
+
+.scroll-lock-ios {
+  position: fixed;
+  overflow: hidden;
+}
+
+.scroll-lock {
+  overflow: hidden;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-transition {
+  /* stylelint-disable-next-line */
+  -webkit-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 96px 80px;
+}
+
+.button {
+  background-color: #173145;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin: 5px 0;
+  font-family: "FS Me", "Arial", sans-serif;
+  padding: 19px 24px;
+  font-family: "FS Me Bold";
+  font-size: 26px;
+  line-height: 26px;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.page {
+  background-color: #D5995F;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  min-width: 374px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  font-family: "FS Me", "Arial", sans-serif;
+  text-align: left;
+  letter-spacing: 0;
+  scroll-behavior: smooth;
+  background-size: cover;
+  background-color: #D5995F;
+  background-repeat: no-repeat;
+  background-image: url("../img/WhereYourMoneyGoes-Desktop-1x.webp");
+}
+
+.page a,
+.page input {
+  border-radius: 10px;
+}
+
+.page a:hover,
+.page input:hover {
+  outline: 3px solid #FFFFFF;
+  opacity: 0.8;
+}
+
+.page a:focus,
+.page a:active,
+.page input:focus,
+.page input:active {
+  outline: 3px solid #FFFFFF;
+}
+
+.page a:disabled,
+.page input:disabled {
+  opacity: 0.1;
+}
+
+.page ul {
+  list-style: none;
+  margin: 0;
+}
+
+.page__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.page__main {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.page__heading {
+  font-size: 40px;
+  font-family: "FS Me", "Arial", sans-serif;
+  font-family: "FS Me Bold";
+  line-height: 52px;
+}
+
+.section {
+  font-family: "FS Me", "Arial", sans-serif;
+  width: 49%;
+  margin-left: auto;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  padding: 45px 57px;
+}
+
+.section__heading {
+  position: relative;
+  margin-top: 0;
+  padding-bottom: 23px;
+  margin-bottom: 45px;
+}
+
+.section__heading::after {
+  position: absolute;
+  content: ' ';
+  width: 64px;
+  height: 6px;
+  background-color: #008CAA;
+  left: 0;
+  top: 100%;
+}
+
+.section__p {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.section__p--bold {
+  font-family: "FS Me Bold";
+}
+
+.tab {
+  margin-bottom: 10px;
+}
+
+.tab__nav {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 8px;
+  margin-bottom: 11px;
+}
+
+.tab__button--active {
+  background-color: #6F3F87;
+  position: relative;
+}
+
+.tab__button--active::before {
+  position: absolute;
+  content: '';
+  width: 15px;
+  height: 15px;
+  background-color: inherit;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: top;
+  -ms-transform-origin: top;
+  transform-origin: top;
+  top: 90%;
+  left: 30%;
+}
+
+.tab__tabs {
+  background-color: #6F3F87;
+  color: #FFFFFF;
+  border-radius: 10px;
+  padding: 32px;
+}
+
+.tab__tabs h3 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 30px;
+}
+
+.tab__tabs p {
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.018em;
+  margin-bottom: 0;
+}
+
+.tab__block--hidden {
+  display: none;
+}
+
+@media (hover: hover), screen and (min-width: 0\0) {
+  .button:hover,
+  .button:focus {
+    opacity: 0.9;
+  }
+}
+
+@media (max-width: 1439px) {
+  .container {
+    padding: 80px 26px;
+  }
+
+  .button {
+    font-size: 22px;
+    line-height: 32px;
+    letter-spacing: 0px;
+    padding: 8px;
+  }
+
+  .page {
+    background-image: url("../img/WhereYourMoneyGoes-Tablet-1x.webp");
+  }
+
+  .page__heading {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .section {
+    width: 64.5%;
+    padding: 38px 32px 33px 32px;
+  }
+
+  .section__heading {
+    padding-bottom: 18px;
+    margin-bottom: 10px;
+  }
+
+  .section__heading::after {
+    width: 48px;
+    height: 4px;
+  }
+
+  .section__p {
+    font-size: 16px;
+    line-height: 26px;
+    margin-top: 28px;
+  }
+
+  .tab {
+    margin-bottom: 0;
+  }
+
+  .tab__nav {
+    margin-bottom: 21px;
+  }
+
+  .tab__button--active::before {
+    left: 100px;
+    width: 13px;
+    height: 13px;
+  }
+
+  .tab__tabs {
+    padding: 26px 26px 31px 19px;
+  }
+
+  .tab__tabs p {
+    font-size: 16px;
+    line-height: 26px;
+    margin-top: 19px;
+  }
+}
+
+@media (max-width: 1439px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1439px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 1439px) and (min-resolution: 144dpi), (max-width: 1439px) and (min-resolution: 1.5dppx) {
+  .page {
+    background-image: url("../img/WhereYourMoneyGoes-Tablet-2x.webp");
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 307px 24px 40px 24px;
+  }
+
+  .button {
+    font-size: 20px;
+    line-height: 26px;
+    padding-bottom: 14px;
+  }
+
+  .page {
+    background-image: url("../img/WhereYourMoneyGoes-Mobile-1x.webp");
+    background-position-x: center;
+    background-position-y: 0;
+    background-size: 100%;
+  }
+
+  .page a:hover,
+  .page input:hover {
+    outline: none;
+  }
+
+  .section {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .section__p {
+    font-size: 16px;
+    line-height: 26px;
+    margin-top: 35px;
+    margin-bottom: 9px;
+  }
+
+  .tab__nav {
+    margin-bottom: 8px;
+  }
+
+  .tab__tabs {
+    padding: 26px 21px 24px 19px;
+  }
+
+  .tab__tabs p {
+    margin-top: 16px;
+    letter-spacing: 0;
+  }
+}
+
+@media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
+  .page {
+    background-image: url("../img/WhereYourMoneyGoes-Mobile-2x.webp");
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .page {
+    background-image: url("../img/WhereYourMoneyGoes-Desktop-2x.webp");
+  }
+}

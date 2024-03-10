@@ -1,0 +1,110 @@
+.tab {
+  margin-bottom: 10px;
+
+  @include tablet {
+    margin-bottom: 0;
+  }
+
+
+}
+
+.tab__nav {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 8px;
+  margin-bottom: 11px;
+
+  @include tablet {
+    margin-bottom: 21px;
+  }
+
+  @include mobile {
+    margin-bottom: 8px;
+  }
+}
+
+.tab__button {
+
+  &--active {
+    background-color: $color-button-hover;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 15px;
+      height: 15px;
+      background-color: inherit;
+
+      transform: rotate(45deg);
+      transform-origin: top;
+
+      top: 90%;
+      left: 30%;
+
+      @include tablet {
+        left: 100px;
+        width: 13px;
+        height: 13px;
+      }
+    }
+  }
+}
+
+.tab__tabs {
+  background-color: $color-button-hover;
+
+  color: $color-default-white;
+  border-radius: 10px;
+  padding: 32px;
+
+  @include tablet {
+    padding: 26px 26px 31px 19px;
+  }
+
+
+  @include mobile {
+    padding: 26px 21px 24px 19px;
+  }
+
+
+
+  & h3 {
+    margin: 0;
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  & p {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.018em;
+    margin-bottom: 0;
+
+    @include tablet {
+
+      font-size: 16px;
+
+      line-height: 26px;
+
+      margin-top: 19px;
+    }
+
+
+    @include mobile {
+      margin-top: 16px;
+      letter-spacing: 0;
+
+    }
+  }
+
+
+}
+
+
+.tab__block {
+  &--hidden {
+    display: none;
+  }
+}
